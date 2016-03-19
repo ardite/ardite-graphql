@@ -1,1 +1,1 @@
-# Ardite GraphQL
+# Ardite GraphQL Server
