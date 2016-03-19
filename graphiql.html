@@ -34,8 +34,8 @@
 
       function graphQLFetcher (graphQLParams) {
         return (
-          fetch(window.location.origin + '/query', {
-            method: 'post',
+          fetch(window.location.origin + '/graphql', {
+            method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(graphQLParams)
           })

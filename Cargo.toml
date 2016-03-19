@@ -1,7 +1,7 @@
 [package]
 name = "ardite-graphql"
 version = "0.0.1"
-description = "GraphQL Ardite server."
+description = "An Ardite service for a GraphQL server."
 keywords = ["ardite", "graphql"]
 authors = ["Caleb Meredith <calebmeredith8@gmail.com>"]
 license = "MIT"
@@ -9,4 +9,9 @@ repository = "ardite/ardite-graphql"
 readme = "README.md"
 
 [dependencies]
+ansi_term = "0.7.2"
 clap = "2.2.1"
+hyper = "0.8.0"
+iron = "0.3.0"
+logger = "0.0.3"
+time = "0.1.34"
