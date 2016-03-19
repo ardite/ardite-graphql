@@ -1,3 +1,5 @@
+static GRAPHIQL_HTML: &'static str = include_str!("../graphiql.html");
+
 fn main() {
-  println!("Hello, world!");
+  println!("{}", GRAPHIQL_HTML);
 }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf8">
+    <title>GraphiQL</title>
+
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/3.2.1/es6-promise.min.js"></script>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/fetch/0.11.0/fetch.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.0-rc.2/react.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/graphiql/0.6.3/graphiql.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/graphiql/0.6.3/graphiql.min.css">
+
+    <style>
+      html, body {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+    </style>
+
+    <script>
+      ready(function loadGraphiQL () {
+        var graphiQLComponent = React.createElement(GraphiQL, {
+          fetcher: graphQLFetcher,
+          query: '{}',
+          variables: '{}',
+          defaultQuery: '{}'
+        })
+        ReactDOM.render(graphiQLComponent, document.body)
+      })
+
+      function graphQLFetcher (graphQLParams) {
+        return (
+          fetch(window.location.origin + '/query', {
+            method: 'post',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(graphQLParams)
+          })
+          .then(function transformToJSON (response) {
+            return response.json()
+          })
+        )
+      }
+
+      function ready (callback) {
+        if (document.readyState != 'loading') {
+          callback()
+        } else {
+          document.addEventListener('DOMContentLoaded', callback)
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

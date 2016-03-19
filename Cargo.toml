@@ -7,3 +7,6 @@ authors = ["Caleb Meredith <calebmeredith8@gmail.com>"]
 license = "MIT"
 repository = "ardite/ardite-graphql"
 readme = "README.md"
+
+[dependencies]
+clap = "2.2.1"
