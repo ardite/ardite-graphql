@@ -1,0 +1,9 @@
+[package]
+name = "ardite-graphql"
+version = "0.0.1"
+description = "GraphQL Ardite server."
+keywords = ["ardite", "graphql"]
+authors = ["Caleb Meredith <calebmeredith8@gmail.com>"]
+license = "MIT"
+repository = "ardite/ardite-graphql"
+readme = "README.md"
