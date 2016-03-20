@@ -1,7 +1,4 @@
 Desktop.ini
 .DS_Store
 target
-Cargo.lock
 ._*
-graphiql/graphiql.css
-graphiql/graphiql.min.js
