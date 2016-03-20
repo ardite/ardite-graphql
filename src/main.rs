@@ -4,7 +4,6 @@ extern crate clap;
 extern crate hyper;
 extern crate iron;
 extern crate logger;
-extern crate time;
 
 mod server;
 

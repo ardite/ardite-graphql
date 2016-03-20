@@ -4,7 +4,6 @@ use iron::mime::{Mime, TopLevel, SubLevel, Attr, Value};
 use iron::modifiers::Header;
 use iron::status::Status;
 use iron::Handler;
-use time;
 
 static GRAPHQL_ENDPOINT: &'static str = "graphql";
 static GRAPHIQL_ENDPOINT: &'static str = "graphiql";
@@ -19,7 +18,6 @@ impl Handler for Server {
     let mut res = Response::new();
     let mut path = req.url.path.clone();
 
-    res.set_mut(Header(Date(HttpDate(time::now()))));
     res.set_mut(Header(CacheControl(vec![CacheDirective::NoCache, CacheDirective::Private])));
 
     if path.len() == 1 {
